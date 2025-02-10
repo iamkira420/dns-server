@@ -12,10 +12,9 @@ int main() {
     // Disable output buffering
     setbuf(stdout, NULL);
 
-    // You can use print statements as follows for debugging, they'll be visible when running tests.
+    // Print statements for debugging, they'll be visible when running tests.
     std::cout << "Logs from your program will appear here!" << std::endl;
 
-      // Uncomment this block to pass the first stage
     int udpSocket;
     struct sockaddr_in clientAddress;
 
@@ -25,7 +24,7 @@ int main() {
         return 1;
     }
 
-    // Since the tester restarts your program quite often, setting REUSE_PORT
+    // Since the tester restarts our program quite often, setting REUSE_PORT
     // ensures that we don't run into 'Address already in use' errors
     int reuse = 1;
     if (setsockopt(udpSocket, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse)) < 0) {
